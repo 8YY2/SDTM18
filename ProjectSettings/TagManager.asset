@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Crystals
+  - OnHandle
+  - OnDoor
+  - Touch
+  - Zombie
+  - Spike
+  - Restart
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
@@ -13,10 +21,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Character
+  - Ground
+  - Projectile
+  - Confiner
   - 
   - 
   - 

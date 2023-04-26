@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 4890085278179872738, guid: d70e5a9d55ee2ae4f8dc6fa2385592d4,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +119,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -173,6 +176,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -254,6 +258,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -506,7 +511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.71800005}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.40000153}
+  m_AnchoredPosition: {x: 0, y: -0.40000916}
   m_SizeDelta: {x: 40, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1718112127
@@ -539,16 +544,17 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 12
+    m_Font: {fileID: 12800000, guid: 810eae3ac5e0d4444a7eb4576a501aa3, type: 3}
+    m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 1
@@ -690,7 +696,7 @@ PrefabInstance:
     - target: {fileID: 8324160754942202934, guid: a98e38a09ea5a684fbe07e70cd65fa96,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.07999802
+      value: -0.08000183
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a98e38a09ea5a684fbe07e70cd65fa96, type: 3}
@@ -819,7 +825,7 @@ PrefabInstance:
     - target: {fileID: 8400030444545007722, guid: 19ac16e5dbd185b43b567646ae5fd86e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.07999802
+      value: -0.08000183
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19ac16e5dbd185b43b567646ae5fd86e, type: 3}
@@ -833,7 +839,7 @@ PrefabInstance:
     - target: {fileID: 1376571257172997177, guid: 452f2e8b7e5708f4e9551a097c23f3f2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.07999802
+      value: -0.08000183
       objectReference: {fileID: 0}
     - target: {fileID: 7983671903422322986, guid: 452f2e8b7e5708f4e9551a097c23f3f2,
         type: 3}
@@ -980,7 +986,7 @@ PrefabInstance:
     - target: {fileID: 2346751751457641875, guid: 2f74ecb441300fa468c20abcf70c6599,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.07999802
+      value: -0.08000183
       objectReference: {fileID: 0}
     - target: {fileID: 5327644711197247488, guid: 2f74ecb441300fa468c20abcf70c6599,
         type: 3}
@@ -1247,7 +1253,7 @@ PrefabInstance:
     - target: {fileID: 8517014470926208717, guid: 44373c1366e91194fbd516b802b0337f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.07999802
+      value: -0.08000183
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44373c1366e91194fbd516b802b0337f, type: 3}
@@ -1361,7 +1367,7 @@ PrefabInstance:
     - target: {fileID: 4080852878387782616, guid: b7c158541d0b9af44be175bf0c087157,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.20000458
+      value: -0.2000122
       objectReference: {fileID: 0}
     - target: {fileID: 4080852878387782616, guid: b7c158541d0b9af44be175bf0c087157,
         type: 3}
@@ -1382,6 +1388,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HorizontalBlackButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445847478954155357, guid: b7c158541d0b9af44be175bf0c087157,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.11999893
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7c158541d0b9af44be175bf0c087157, type: 3}

@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     //public static GameManager instance;
     // Start is called before the first frame update
     public GameObject gameHelpPanel;
+    public GameObject SetPanel,optionsPanel,SkinPanel;
+   
+
     void Start()
     {
         
@@ -18,13 +21,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //ClearAll();
     }
 
-    public void playgame()
+    public void ClearAll()
     {
-        SceneManager.LoadScene("mapscene");//load level menu scene
-
+        PlayerPrefs.DeleteAll();
     }
     public void backmenu()
     {
@@ -47,7 +49,19 @@ public class GameManager : MonoBehaviour
 
             gameHelpPanel.SetActive(!isActive);
         }
+      
     }
+    public void setmethod()
+    {
+       
+        if (SetPanel != null)
+        {
+            bool isActive = SetPanel.activeSelf;
+
+            SetPanel.SetActive(!isActive);
+        }
+    }
+
     public void close()
     {
         if (gameHelpPanel != null)
@@ -56,5 +70,40 @@ public class GameManager : MonoBehaviour
 
             gameHelpPanel.SetActive(!isActive);
         }
+
     }
+    public void close2()
+    {
+        if (SetPanel != null)
+        {
+            bool isActive = SetPanel.activeSelf;
+
+            SetPanel.SetActive(!isActive);
+        }
+
+    }
+
+    public void changepanel()
+    {
+
+        if (optionsPanel != null)
+        {
+            bool isActive = optionsPanel.activeSelf;
+
+            optionsPanel.SetActive(!isActive);
+        }
+        if (SkinPanel != null)
+        {
+            bool isActive = SkinPanel.activeSelf;
+
+            SkinPanel.SetActive(!isActive);
+        }
+
+
+    }
+
+    
+
+
+
 }

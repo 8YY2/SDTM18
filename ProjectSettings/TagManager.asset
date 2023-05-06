@@ -12,6 +12,9 @@ TagManager:
   - Spike
   - Restart
   - Checkpoint
+  - DieSpike
+  - Enemy
+  - bullet
   layers:
   - Default
   - TransparentFX

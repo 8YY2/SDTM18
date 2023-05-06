@@ -27,6 +27,7 @@ public class ChaseState : StateMachineBehaviour
         if (distance < 2f)
         {
             animator.SetBool("isAttack", true);
+            AudioManager.instance.Play("ZombieAttack");
             //Damage();
         }
            

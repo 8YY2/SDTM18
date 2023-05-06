@@ -10,6 +10,7 @@ public class Damage : MonoBehaviour
         if (controller != null)
         {
             controller.ChangeHealth(-1);
+            AudioManager.instance.Play("Blood");
         }
     }
 }

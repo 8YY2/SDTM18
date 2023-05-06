@@ -73,6 +73,7 @@ public class UIHealthBar : MonoBehaviour
         if (win)
         {
             instance.GameWinPanel.SetActive(true);
+            AudioManager.instance.Play("GameWin");
             Time.timeScale = 0;//game pause
         }
 

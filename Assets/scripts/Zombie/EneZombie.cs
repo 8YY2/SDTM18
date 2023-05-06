@@ -45,6 +45,8 @@ public class EneZombie : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
             enemyHealthBar.gameObject.SetActive(false);
             this.enabled = false;
+            AudioManager.instance.Stop("ZombieAttack");
+            AudioManager.instance.Play("ZombieDie");
             Debug.Log(enemyHP);
         }
     }

@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5f;
-    public float jumpspeed = 12f;
+    public float speed = 6f;
+    public float jumpspeed = 18f;
     private float direction = 0f;//==horizontal
     private float dirY = 0f;//==horizontal
-    private Rigidbody2D player;//=rigidbody
+    [SerializeField] private Rigidbody2D player;//=rigidbody
     public GameObject projectilePrefab;
 
 
-    public Transform groundCheck;
+    [SerializeField] public Transform groundCheck;
     public float groundCheckRadius;
-    public LayerMask groundLayer;
+    [SerializeField] public LayerMask groundLayer;
     private bool isTouchingGround;
 
     private Animator playerAnimation;//==animator
@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isTouchingGround)
         {
             player.velocity = new Vector2(player.velocity.x,jumpspeed);
+            AudioManager.instance.Play("Jump");
         }
 
         playerAnimation.SetFloat("Speed",Mathf.Abs(player.velocity.x));
@@ -109,6 +110,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             Launch();
+            AudioManager.instance.Play("Projectile");
         }
 
         if (ClimbingAllowed)
@@ -174,9 +176,16 @@ public class PlayerController : MonoBehaviour
         {
 
             ChangeHealth(-1);
-
+            AudioManager.instance.Play("Blood");
         }
 
+        if (other.gameObject.CompareTag("DieSpike"))
+        {
+
+            Die();
+
+        }
+        
 
     }
      void OnTriggerEnter2D(Collider2D other)
@@ -185,6 +194,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("attackplayer");
             ChangeHealth(-1);
+            AudioManager.instance.Play("Blood");
 
         }
 
@@ -192,7 +202,9 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.CompareTag("Restart"))
         {
             transform.position = respawnPoint;
+            AudioManager.instance.Play("Sea");
             ChangeHealth(-1);
+            //AudioManager.instance.Play("Blood");
 
         }
         else if(other.gameObject.CompareTag("Checkpoint"))
@@ -208,6 +220,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Die");
         //bool dead = true;
+        AudioManager.instance.Play("GameOver");
         FindObjectOfType<UIHealthBar>().GameOver();
 
     }

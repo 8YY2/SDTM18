@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 7451900151011651806}
   - component: {fileID: 7451900151011651805}
   - component: {fileID: 7451900151011651804}
+  - component: {fileID: 5674467467999587630}
   m_Layer: 8
   m_Name: Boy
   m_TagString: Player
@@ -130,7 +131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7451900151011651803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.07, y: -2.63, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 7451900150685380834}
@@ -205,11 +206,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 2.3
   m_Material: {fileID: 6200000, guid: 07883f196163b6a46b492b01347f3797, type: 2}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &7451900151011651806
 MonoBehaviour:
@@ -225,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpspeed: 12
+  player: {fileID: 0}
   projectilePrefab: {fileID: 5143539495625353854, guid: e097b25b3be8c7c42a40f6e196fe37f5,
     type: 3}
   groundCheck: {fileID: 7451900150685380834}
@@ -274,6 +276,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5674467467999587630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7451900151011651803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c564b59a74586f4fbdc7b8902ee3979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8060703913206084489
 GameObject:
   m_ObjectHideFlags: 0

@@ -59,6 +59,7 @@ public class EnemyController : MonoBehaviour
         if (player != null)
         {
             player.ChangeHealth(-1);
+            AudioManager.instance.Play("Blood");
         }
     }
     public void Die()

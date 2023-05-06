@@ -34,6 +34,7 @@ public class EneMace : MonoBehaviour
         if (player != null)
         {
             player.ChangeHealth(-1);
+            AudioManager.instance.Play("Blood");
         }
     }
   

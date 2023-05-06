@@ -29,11 +29,30 @@ public class Projectile : MonoBehaviour
 
         //Debug.Log("Project" +other.gameObject);
         EnemyController e = other.collider.GetComponent<EnemyController>();
+        gatecontrol door = other.collider.GetComponent<gatecontrol>();
+        EnemyGFX ene = other.collider.GetComponent<EnemyGFX>();
+        EnemyFollowPlayer boss=other.collider.GetComponent<EnemyFollowPlayer>();
+        //bulletScript bullet = other.collider.GetComponent<bulletScript>();
         if (e != null)
         {
             e.Die();
         }
-
+        if(door != null)
+        {
+            door.Die();
+        }
+        if( ene != null)
+        {
+            ene.TakeDamage(25);
+        }
+        if (boss != null)
+        {
+            boss.TakeDamage(20);
+        }
+        //if (bullet != null)
+        //{
+        //    Destroy(bullet);
+        //}
         //if (other.gameObject.tag == "Zombie")
         //{
         //    other.gameObject.GetComponent<EneZombie>().TakeDamage(25);
@@ -49,5 +68,11 @@ public class Projectile : MonoBehaviour
             collision.GetComponent<EneZombie>().TakeDamage(25);
             Debug.Log("Zombie");
         }
+        if(collision.tag == "bullet")
+        {
+            bulletScript bullet = collision.GetComponent<bulletScript>();
+            Destroy(bullet);
+        }
+
     }
 }

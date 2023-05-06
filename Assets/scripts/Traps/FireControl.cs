@@ -15,7 +15,9 @@ public class FireControl : MonoBehaviour
         {
             animator.SetTrigger("isHit");
             e.ChangeHealth(-1);
+            AudioManager.instance.Play("Blood");
             animator.SetTrigger("Fireon");
+            AudioManager.instance.Play("FireBox");
         }
 
       

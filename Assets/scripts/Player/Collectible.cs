@@ -15,6 +15,7 @@ public class Collectible : MonoBehaviour
             if(playerController.Health < playerController.maxHealth)
             {
                 playerController.ChangeHealth(1);
+                AudioManager.instance.Play("Collectibles");
                 Destroy(gameObject);
             }
 

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 
 public class GameManager : MonoBehaviour
@@ -11,11 +12,27 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     public GameObject gameHelpPanel;
     public GameObject SetPanel,optionsPanel,SkinPanel;
-   
+    public Slider volumeSlider;
+    public Slider AudioSlider;
+    public AudioMixer mixer;
+    public AudioMixer audioMixer;
+    private float value;
 
-    void Start()
+    private void Start()
     {
-        
+        Time.timeScale = 1;
+        mixer.GetFloat("volume", out value);
+        audioMixer.GetFloat("audiovolume", out value);
+        volumeSlider.value = value;
+        AudioSlider.value = value;  
+    }
+    public void SetVolume()
+    {
+        mixer.SetFloat("volume", volumeSlider.value);
+    }
+    public void SetAudioVolume()
+    {
+        audioMixer.SetFloat("audiovolume", AudioSlider.value);
     }
 
     // Update is called once per frame

@@ -42,6 +42,14 @@ public class EnemyFollowPlayer : MonoBehaviour
             nextfireTime = Time.time+fireRate;
         }
     }
+    void FixedUpdate()
+    {
+        if (player.position.x > transform.position.x)
+            transform.localScale = new Vector2(-1.5f, 1.5f);
+        else
+            transform.localScale = new Vector2(1.5f, 1.5f);
+
+    }
     public void TakeDamage(int damageAmount)
     {
         enemyHP -= damageAmount;

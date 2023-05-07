@@ -11,7 +11,7 @@ public class Dialogue : MonoBehaviour {
     private int index;
     public float typingSpeed;
 
-    public GameObject continueButton,panel;
+    public GameObject trigger,continueButton,panel;
 
     void Start() {
         StartCoroutine(TypeSentence());
@@ -43,6 +43,7 @@ public class Dialogue : MonoBehaviour {
             index++;
             textDisplay.text = "";
             StartCoroutine(TypeSentence());
+            AudioManager.instance.Play("Typing");
 
         }
         else
@@ -50,11 +51,14 @@ public class Dialogue : MonoBehaviour {
             textDisplay.text = "";
             continueButton.SetActive(false);
             panel.SetActive(false);
+            Destroy(panel);
+            trigger.SetActive(false) ;
         }
     }
     public void openpanel()
     {
         panel.SetActive(true);
+        AudioManager.instance.Play("Typing");
     }
 
 
